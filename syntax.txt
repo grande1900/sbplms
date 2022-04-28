@@ -1,0 +1,25 @@
+-- @ = Stack input
+-- $ = String input
+-- N = stored value
+
+# $: Comment
+
+-- Standard Commands
+Any integer: Sets N to the provided value
+I $: Sends input, then sets N to the value given.
+N: Print N
+.N: Print N from ASCII
+~N: Invert N
+~@: Remove value at top of stack
+Q: Ends Program
+
+A-F: Push to stack
+a-f: Pop from stack
+
+-- Stack Arithmetic: If there is no second input supplied, N is used.
+@+@
+@*@
+
+-- Boolops: set N to -1 if true, else set N to 0. If there is no second input supplied, N is used.
+@=@
+@<@
