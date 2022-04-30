@@ -20,6 +20,6 @@ a-f: Pop from stack
 @+@
 @*@
 
--- Boolops: set N to -1 if true, else set N to 0. If there is no second input supplied, N is used.
+-- Boolops: set N to 1 if true, else set N to 0. If there is no second input supplied, N is used.
 @=@
 @<@
