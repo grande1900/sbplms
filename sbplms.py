@@ -60,16 +60,10 @@ for std in stdin:
                             mult(i, j)
                             A = True
                         elif line.rstrip() == f'{i}={j}' and not A:
-                            if stacks[i].pop(-1) == stacks[j].pop(-1):
-                                N(-1)
-                            else:
-                                N(0)
+                            N(stacks[i].pop(-1) == stacks[j].pop(-1))
                             A = True
                         elif line.rstrip() == f'{i}<{j}' and not A:
-                            if stacks[i].pop(-1) < stacks[j].pop(-1):
-                                N(-1)
-                            else:
-                                N(0)
+                            N(stacks[i].pop(-1) < stacks[j].pop(-1))
                             A = True
                     if line.rstrip() == f'{i}' and not A:
                         push(i)
@@ -89,16 +83,10 @@ for std in stdin:
                         A = True
                     # Boolops with N
                     elif line.rstrip() == f'{i}=' and not A:
-                        if stacks[i].pop(-1) == n:
-                            N(-1)
-                        else:
-                            N(0)
+                        N(stacks[i].pop(-1) == n)
                         A = True
                     elif line.rstrip() == f'{i}<' and not A:
-                        if stacks[i].pop(-1) < n:
-                            N(-1)
-                        else:
-                            N(0)
+                        N(stacks[i].pop(-1) < n)
                         A = True
                 if line.rstrip().isdigit() and not A:
                     N(int(line))
@@ -133,16 +121,10 @@ for std in stdin:
                                 mult(i, j)
                                 A = True
                             elif line.rstrip() == f'{i}={j}' and not A:
-                                if stacks[i].pop(-1) == stacks[j].pop(-1):
-                                    N(-1)
-                                else:
-                                    N(0)
+                                N(stacks[i].pop(-1) == stacks[j].pop(-1))
                                 A = True
                             elif line.rstrip() == f'{i}<{j}' and not A:
-                                if stacks[i].pop(-1) < stacks[j].pop(-1):
-                                    N(-1)
-                                else:
-                                    N(0)
+                                N(stacks[i].pop(-1) < stacks[j].pop(-1))
                                 A = True
                         if line.rstrip() == f'{i}' and not A:
                             push(i)
@@ -162,16 +144,10 @@ for std in stdin:
                             A = True
                         # Boolops with N
                         elif line.rstrip() == f'{i}=' and not A:
-                            if stacks[i].pop(-1) == n:
-                                N(-1)
-                            else:
-                                N(0)
+                            N(stacks[i].pop(-1) == n)
                             A = True
                         elif line.rstrip() == f'{i}<' and not A:
-                            if stacks[i].pop(-1) < n:
-                                N(-1)
-                            else:
-                                N(0)
+                            N(stacks[i].pop(-1) < n)
                             A = True
                     if line.rstrip().isdigit() and not A:
                         N(int(line))
@@ -217,10 +193,10 @@ for std in stdin:
                                     out.write(f"n = stacks['{i}'].pop() * stacks['{j}'].pop()\n")
                                     A = True
                                 elif line.rstrip() == f'{i}={j}' and not A:
-                                    out.write(f"if stacks['{i}'].pop() == stacks['{j}'].pop():\n    n = -1\nelse:\n    n = 0\n")
+                                    out.write(f"n = (stacks['{i}'].pop() == stacks['{j}'].pop())\n")
                                     A = True
                                 elif line.rstrip() == f'{i}<{j}' and not A:
-                                    out.write(f"if stacks['{i}'].pop() < stacks['{j}'].pop():\n    n = -1\nelse:\n    n = 0\n")
+                                    out.write(f"n = (stacks['{i}'].pop() < stacks['{j}'].pop())\n")
                                     A = True
                             if line.rstrip() == f'{i}' and not A:
                                 out.write(f"stacks['{i}'].append(n)\n")
@@ -240,10 +216,10 @@ for std in stdin:
                                 A = True
                             # Boolops with N
                             elif line.rstrip() == f'{i}=' and not A:
-                                out.write(f"if stacks['{i}'].pop() == n:\n    n = -1\nelse:\n    n = 0\n")
+                                out.write(f"n = (stacks['{i}'].pop() == n)\n")
                                 A = True
                             elif line.rstrip() == f'{i}<' and not A:
-                                out.write(f"if stacks['{i}'].pop() < n:\n    n = -1\nelse:\n    n = 0\n")
+                                out.write(f"n = (stacks['{i}'].pop() < n)\n")
                                 A = True
                         if line.rstrip().isdigit() and not A:
                             out.write(f"n = {line.rstrip()}\n")
